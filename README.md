@@ -31,5 +31,5 @@ npm run build && npm run test -- -u
 
 See 
 
-`packages/psammead-headings-with-test-helpers/src/__snapshots__/index.test.jsx.snap`
+`packages/psammead-headings-with-test-helpers/src/__snapshots__/index.test.jsx.snap`  
 `packages/psammead-headings/src/__snapshots__/index.test.jsx.snap`
