@@ -21,7 +21,7 @@ Install the top level repo and all child packages
 npm install
 ```
 
-=Link psammead-headings to psammead-test-helpers locally
+Link psammead-headings to psammead-test-helpers locally
 ```
 cd packages/psammead-headings && npm link ../psammead-test-helpers && cd ..;
 ```
