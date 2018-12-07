@@ -16,20 +16,22 @@ When `psammead-headings` is locally linked to `psammead-test-helpers`, `react-te
 
 # To Replicate issue
 
-
+Install the top level repo and all child packages
 ```
 npm install
 ```
 
+=Link psammead-headings to psammead-test-helpers locally
 ```
 cd packages/psammead-headings && npm link ../psammead-test-helpers && cd ..;
 ```
 
+Build the files and run the test
 ```
 npm run build && npm run test -- -u
 ```
 
-See 
+See that the snapshots generated are different, one has css included, one doesnt
 
 `packages/psammead-headings-with-test-helpers/src/__snapshots__/index.test.jsx.snap`  
 `packages/psammead-headings/src/__snapshots__/index.test.jsx.snap`
