@@ -1,0 +1,12 @@
+{
+  "name": "@bbc/psammead-headings",
+  "version": "0.1.2",
+  "main": "dist/index.js",
+  "description": "React styled components for a Headline and SubHeading",
+  "dependencies": {
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "@bbc/psammead-test-helpers": "^0.1.0"
+  }
+}

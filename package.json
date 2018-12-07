@@ -1,0 +1,75 @@
+{
+  "name": "@bbc/psammead",
+  "version": "0.1.0",
+  "description": "Core Components Library Developed & Maintained By The Articles and Reach & Languages Team",
+  "main": "index.js",
+  "scripts": {
+    "build": "lerna exec --parallel -- babel src -d dist --ignore '**/*.test.jsx,**/*.stories.jsx' --root-mode upward",
+    "install:packages": "lerna exec -- npm install",
+    "postinstall": "npm run install:packages",
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbc/psammead.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbc/psammead/issues"
+  },
+  "homepage": "https://github.com/bbc/psammead#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "speculate": "^1.7.4",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-styled-components": "^1.5.1",
+    "jest": "^23.6.0",
+    "jest-styled-components": "^5.0.1",
+    "lerna": "^3.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:lint && npm run test:lint:css",
+      "pre-push": "npm run test:unit"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/packages/**/*.{js,jsx}",
+      "!**/*.stories.{js,jsx}",
+      "!**/.eslintrc.js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)",
+      "**/*.test.{js,jsx}"
+    ]
+  },
+  "spec": {
+    "prune": false,
+    "requires": [
+      "nodejs",
+      "cfn-signal",
+      "cloud-httpd24-ssl-services-devs-staff"
+    ],
+    "environment": {
+      "NODE_ENV": "production",
+      "BABEL_CACHE_PATH": "/tmp/.babel.json"
+    },
+    "post": [
+      "mkdir -p /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY",
+      "cp -af /usr/lib/PSAMMEAD-COMPONENT-LIBRARY/bake-scripts/. /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY",
+      "chmod +x /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY/*"
+    ]
+  }
+}
