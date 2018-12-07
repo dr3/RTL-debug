@@ -36,39 +36,5 @@
     "babel-plugin-styled-components": "^1.5.1",
     "jest": "^23.6.0",
     "lerna": "^3.3.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test:lint && npm run test:lint:css",
-      "pre-push": "npm run test:unit"
-    }
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "**/packages/**/*.{js,jsx}",
-      "!**/*.stories.{js,jsx}",
-      "!**/.eslintrc.js"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.js?(x)",
-      "**/*.test.{js,jsx}"
-    ]
-  },
-  "spec": {
-    "prune": false,
-    "requires": [
-      "nodejs",
-      "cfn-signal",
-      "cloud-httpd24-ssl-services-devs-staff"
-    ],
-    "environment": {
-      "NODE_ENV": "production",
-      "BABEL_CACHE_PATH": "/tmp/.babel.json"
-    },
-    "post": [
-      "mkdir -p /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY",
-      "cp -af /usr/lib/PSAMMEAD-COMPONENT-LIBRARY/bake-scripts/. /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY",
-      "chmod +x /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY/*"
-    ]
   }
 }
